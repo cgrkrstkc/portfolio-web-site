@@ -1,0 +1,462 @@
+:root{
+    --main-bg-color: #111111;
+    --secondary-bg-color: #dfdfdf;
+    --primary-color: #dfdfdf;
+    --nav-border-color: #333333;
+    --hover-color: brown;
+    --hover-bg-color: brown;
+    --btn-border-color: brown;
+    --name-color: brown;
+    --border-color: #dfdfdf;
+    --services-card-bg-color: #333333;
+    --services-card-bg-hover-color: salmon;
+}
+
+/*CAHANGING NAME COLORS WITH JAVASCRIPT*/
+.salmon{
+    --name-color: salmon;
+}
+.orange{
+    --name-color: orange;
+}
+.lightblue{
+    --name-color: lightblue;
+}
+.navy{
+    --name-color: navy;
+}
+.pink{
+    --name-color: pink;
+}
+
+/*MOBILE STYLE SECTION*/
+@media only screen and (max-width: 768px){
+
+    nav{
+        opacity: 0;
+        pointer-events: none;
+        width: 0px;
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        background-color: var(--main-bg-color);
+        z-index: 9999;
+        transition: all .5s ease;
+    }
+    nav.show{
+        opacity: 1;
+        pointer-events: auto;
+        transform-origin: top right;
+        top: 0;
+    }
+
+    nav .nav__content{
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    nav .nav__menu ul{
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1.5em;
+    }
+    nav .nav__menu ul li img{
+     display: none;
+    }
+    nav .nav__content .header{
+        display: none;
+    }
+
+    .hamburger{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .5em;
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        width: 35px;
+        height: 35px;
+        padding: .2em;
+        cursor: pointer;
+        z-index: 99999;
+    }
+    .hamburger.show{
+        gap: 0em;
+    }
+    .hamburger span{
+        height: 2px;
+        border-radius: .5em;
+        width: 100%;
+        background-color: var(--secondary-bg-color);
+    }
+
+
+    section{
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 4em;
+        margin: 0;
+    }
+    
+    
+    /*SETTINGS SECTION-THEME SECTION*/
+.settings__section{
+    position: fixed;
+    right: -285px;
+    top: 15%;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    padding: .1em;
+    padding-bottom: .8em;
+    transition: all .5s ease;
+    z-index: 100;
+}
+.icons{
+    flex-direction: column;
+    gap: .5em;
+    padding-right: 1em;
+}
+.icons img{
+    width: 30px;
+    height: 30px;
+    padding: .2em;
+}
+.icons img:hover{
+    opacity: .7;
+}
+
+.acordion__theme__menu{
+    gap: .5em;
+}
+
+.theme__header p{
+    font-size: 1em;
+}
+.themes{
+    padding-right: .6em;
+    gap: .1em;
+}
+.themes span{
+    width: 30px;
+    height: 30px;
+}
+.themes span:hover{
+    opacity: .7;
+}
+
+
+/*HOME SECTION*/
+
+.home__image{
+    width: 250px;
+    height: 250px;
+}
+
+.home__section{
+    gap: .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 550px;
+}
+.home__section .home__sup__headline{
+    margin-bottom: .5em;
+    font-size: 1.2em;
+    padding-left: 8em;
+    
+}
+.home__section .home__sub__headline{
+    margin-bottom: .5em;
+    font-size: 1.5em;
+    padding-left: 2.2em;
+}
+.home__section .home__statement{
+    margin-bottom: .5em;
+    padding-left: 2.6em;
+    font-size: 1em;
+    text-align: center;
+}
+
+.home__section .home__aboutme__btn{
+    width: 170px;
+    padding: .5em 1.2em;
+    font-size: 1em;
+}
+
+/*ABOUT SECTION*/
+
+#about{
+    padding: 100px 0 50px;
+}
+#about .container{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.left__about{
+    padding: .5em;
+}
+.left__about .card img{
+    width: 200px;
+    height: 200px;
+}
+.right__about{
+    padding: 1em;
+    width: auto;
+}
+.about__content .about__headline{
+    font-size: 2em;
+    text-align: center;
+}
+.about__content .about__info{
+    font-size: .9em;
+    margin-bottom: 1.5em;
+    text-align: center;
+    line-height: 1.4em;
+}
+.about__skills ul{
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+.about__skills ul li::before{
+    height: 2px;
+}
+
+
+/*SERVICES SECTION*/
+
+#services{
+    padding: 110px 0 ;
+}
+.services__header{
+    font-size: 2em;
+}
+.services_cards{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5em;
+}
+.services__card{
+    width: 280px;
+    padding: .5em;
+}
+
+.services__card h2{
+    margin-bottom: .3em;
+}
+
+.services__card img{
+    width: 30px;
+    height: 30px;
+}
+.services__card img,
+.services__card p,
+.services__card a{
+    margin-bottom: 1em;
+}
+.services__card a{
+    font-size: 1em;
+}
+.services__card a:hover{
+    color: darkmagenta;
+}
+
+/*MY PORTFOLIO SECTION*/
+#my-work{
+    padding: 100px 0;
+}
+#my-work .container{
+    flex-direction: column;
+}
+
+.my__work__header{
+    font-size: 2em;
+}
+.my__work_cards{
+    flex-direction: column;
+    gap: 2em;
+}
+.my__work__card{
+    width: 200px;
+    height: 300px;
+    padding: .5em;
+}
+.overlaying__card{
+    gap: 1em;
+    padding: 0 .5em;
+}
+
+.overlaying__card h2{
+    color: var(--primary-color);
+    font-size: 1.3em;
+}
+
+.overlaying__card p{
+    color: var(--primary-color);
+    font-size: .9em;
+}
+
+.overlaying__card img{
+    width: 35px;
+    height: 35px;
+}
+
+.container .my__work__see__more{
+    width: 120px;
+    padding: .5em 1.2em;
+    font-size: 1em;
+}
+
+/*CONTACT SECTION*/
+#contact{
+    padding: 80px 0;
+}
+#contact .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.left__contact__content{
+    padding: 2em;
+    width: auto;
+}
+.contact__headline{
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+.left__contact{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 2em;
+    position: relative;
+    color: var(--primary-color);
+}
+.left__contact p::before{
+    left: -26px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.left__contact img{
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+.left__contact.socials{
+    justify-content: flex-start;
+    gap: 2em;
+}
+
+.left__contact.socials a::before{
+    width: 30px;
+    height: 30px;
+}
+
+
+.left_contact__cv{
+    margin-top: 2em;
+    text-align: center;
+    padding: .5em 1.2em;
+    font-size: 1em;
+}
+.left_contact__cv:hover{
+    color: var(--hover-color);
+    background-color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    opacity: .5;
+}
+
+form {
+    width: 100%;
+    padding: .5em;
+}
+form .input__group{
+    width: auto;
+    height: 45px;
+    margin-bottom: 1em;
+}
+form .input__group input{
+    font-size: .9em;
+    padding: .5em;
+}
+
+form .input__group textarea{
+    font-size: .9em;
+    padding: .5em;
+}
+
+form .input__group input::placeholder,
+form .input__group textarea::placeholder{
+    transition: all .3s ease;
+    font-size: .95em;
+}
+
+.submit{
+    width: 120px;
+    padding: .5em 1.2em;
+    font-size: 1em;
+    margin-top: 7em;
+}
+
+
+/*FOOTER SECTION*/
+
+footer{
+    height: 10px;
+}
+
+footer div p{
+    font-size: .8em;
+}
+
+/*SCROLL UP TO SECTION*/
+
+.scroll__up{
+    right: 25px;
+    bottom: 25px;
+    font-size: 4em;
+    font-weight: 100;
+}
+.scroll__up::after{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+}
+
+
+}
